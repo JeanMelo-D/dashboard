@@ -1,19 +1,102 @@
-{% load static tailwind_tags %}
+Claro, aqui está o código HTML sem nenhuma referência ao Bootstrap: ```html {%
+load static %}
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-    <title>Django Tailwind</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
-	</head>
+<html lang="pt-br">
+   
+  <head>
+           
+    <meta charset="utf-8" />
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-			</section>
-		</div>
-	</body>
+       
+    <title>.views insertions</title>
+     
+  </head>
+   
+  <body>
+           
+    <nav>
+            <a href="#">Dashboard</a>      
+      <button type="button">        <span></span>      </button>
+
+           
+      <div id="navbarSupportedContent">
+               
+        <ul>
+                   
+          <li>
+                        <a href="#">Home <span>(current)</span></a>          
+          </li>
+                   
+          <li>            <a href="#">Link</a>          </li>
+                   
+          <li>
+                        <a href="#"> Dropdown </a>            
+            <div>
+                            <a href="#">Action</a>              
+              <a href="#">Another action</a>              
+              <hr />
+                            <a href="#">Something else here</a>            
+            </div>
+                     
+          </li>
+                   
+          <li>            <a href="#">Disabled</a>          </li>
+                 
+        </ul>
+               
+        <form>
+                   
+          <input type="search" placeholder="Search" aria-label="Search" />      
+              <button type="submit">            Search          </button>      
+           
+        </form>
+             
+      </div>
+         
+    </nav>
+               
+    <div>
+           
+      <table>
+               
+        <thead>
+                   
+          <tr>
+                        {% for key in dashboard.0.keys %}            
+            <th>{{ key }}</th>
+                        {% endfor %}          
+          </tr>
+                 
+        </thead>
+               
+        <tbody>
+                    {% for linha in dashboard %}          
+          <tr>
+                        {% for valor in linha.values %}            
+            <td>{{ valor }}</td>
+                        {% endfor %}          
+          </tr>
+                    {% endfor %}        
+        </tbody>
+             
+      </table>
+         
+    </div>
+             
+    <footer>
+         
+      <div>
+             
+        <ul></ul>
+             
+        <p>Development - Jean Melo</p>
+           
+      </div>
+       
+    </footer>
+     
+  </body>
 </html>
+```
