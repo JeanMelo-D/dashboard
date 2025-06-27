@@ -1,92 +1,107 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dracula">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}" />
-    <title>.views insertions</title>
+    <title>Teste DaisyUI</title>
   </head>
   <body>
-    <nav>
-      <a href="#">Dashboard</a>
-      <button type="button">
-        <span></span>
-      </button>
-
-      <div id="navbarSupportedContent">
-        <ul>
+    <div class="navbar bg-base-300">
+      <div class="flex-1">
+        <a class="text-xl btn btn-ghost">Meu Site</a>
+      </div>
+      <div class="flex-none">
+        <ul class="px-1 menu menu-horizontal">
+          <li><a>Link 1</a></li>
           <li>
-            <a href="#">Home <span>(current)</span></a>
-          </li>
-          <li>
-            <a href="#">Link</a>
-          </li>
-          <li>
-            <a href="#">Dropdown</a>
-            <div>
-              <a href="#">Action</a>
-              <a href="#">Another action</a>
-              <hr />
-              <a href="#">Something else here</a>
-            </div>
-          </li>
-          <li>
-            <a href="#">Disabled</a>
+            <details>
+              <summary>Menu</summary>
+              <ul class="p-2 rounded-t-none bg-base-100">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
           </li>
         </ul>
-        <form>
-          <input type="search" placeholder="Search" aria-label="Search" />
-          <button type="submit">Search</button>
-        </form>
       </div>
-    </nav>
-    <h1 class="p-4 text-4xl font-bold text-blue-600 underline bg-yellow-200">
-      Se o Tailwind estiver funcionando, este texto será grande, azul e terá um
-      fundo amarelo!
-    </h1>
+    </div>
 
-    <div class="shadow-xl card w-96 bg-base-100">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Sapatos!</h2>
-        <p>Se um novo sapato se encaixa, compre!</p>
-        <div class="justify-end card-actions">
-          <button class="btn btn-primary">Comprar Agora</button>
+    <div class="hero min-h-96 bg-base-200">
+      <div class="text-center hero-content">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Olá, Mundo!</h1>
+          <p class="py-6">
+            Se você está vendo esta seção com cores, fontes e espaçamentos
+            bonitos, o DaisyUI e o Tailwind estão funcionando perfeitamente.
+          </p>
+          <button class="btn btn-primary">Começar</button>
         </div>
       </div>
     </div>
 
-    <div>
-      <table>
-        <thead>
-          <tr>
-            {% for key in dashboard.0.keys %}
-            <th>{{ key }}</th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody>
-          {% for linha in dashboard %}
-          <tr>
-            {% for valor in linha.values %}
-            <td>{{ valor }}</td>
-            {% endfor %}
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <footer>
-      <div>
-        <ul></ul>
-        <p>Development - Jean Melo</p>
+    <div class="container flex flex-wrap justify-center gap-8 p-8 mx-auto">
+      <div class="shadow-xl card w-96 bg-base-100">
+        <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            alt="Sapatos"
+          />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">
+            Sapatos!
+            <div class="badge badge-secondary">NOVO</div>
+          </h2>
+          <p>Se um novo sapato se encaixa, compre!</p>
+          <div class="justify-end card-actions">
+            <div class="badge badge-outline">Fashion</div>
+            <div class="badge badge-outline">Produtos</div>
+          </div>
+        </div>
       </div>
-    </footer>
+
+      <div class="flex flex-col gap-4 w-96">
+        <div role="alert" class="alert alert-success">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 stroke-current shrink-0"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>Tudo certo! O alerta de sucesso está funcionando.</span>
+        </div>
+
+        <div role="alert" class="alert alert-error">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 stroke-current shrink-0"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>O alerta de erro também está estilizado.</span>
+        </div>
+
+        <div class="flex gap-2">
+          <button class="btn btn-info">Info</button>
+          <button class="btn btn-warning">Aviso</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

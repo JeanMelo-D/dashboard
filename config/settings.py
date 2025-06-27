@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,7 @@ INSTALLED_APPS = [
     'data',
     'tailwind',               # Este é o app principal do django-tailwind
     'django_browser_reload',  # Para o hot reload
-    'visual',
+    'cool',
 ]
 
 MIDDLEWARE = [
@@ -40,7 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+ ]
 
 ROOT_URLCONF = 'config.urls'
 
@@ -59,12 +60,11 @@ TEMPLATES = [
     },
 ]
 
-TAILWIND_APP_NAME = 'visual'
+TAILWIND_APP_NAME = 'cool'
 
-
+TAILWIND_VERSION = '3.4.4' 
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -111,9 +111,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'visual/static_src/src/'
+STATIC_URL = 'cool/static/'
+
+# ESTA É A LINHA MAIS IMPORTANTE QUE PROVAVELMENTE ESTÁ FALTANDO OU INCORRETA
+STATICFILES_DIRS = [
+    BASE_DIR / 'cool/static' 
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
